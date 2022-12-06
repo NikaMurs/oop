@@ -1,9 +1,8 @@
-// eslint-disable-next-line
-import Character from './character.js';
+import Character from './character';
 
 export default class Bowman extends Character {
-  constructor(name) {
-    super(name, 'Bowman');
+  constructor(name, type = 'Bowman') {
+    super(name, type);
     this.attack = 25;
     this.defence = 25;
   }

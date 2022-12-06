@@ -1,17 +1,21 @@
 export default class Character {
   constructor(name, type) {
     if (name.length < 2) {
-      throw new Error('Name must be longer');
+      throw new Error('Длина имени персонажа не может быть короче 2ух символов');
     }
     if (name.length > 10) {
-      throw new Error('Name must be shorter');
+      throw new Error('Длина имени персонажа не может быть длинее 10ти символов');
+    }
+    const allType = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
+    if (!allType.includes(type)) {
+      throw new Error('Неправильный тип персонажа. Выберите другой');
     }
     this.name = name;
     this.type = type;
     this.health = 100;
     this.level = 1;
-    this.attack = 0;
-    this.defence = 0;
+    this.attack = undefined;
+    this.defence = undefined;
   }
 
   levelUp() {
