@@ -79,24 +79,25 @@ test.each([
 });
 
 test('create character with short name', () => {
+  expect(() => new Bowman('a')).toThrow();
+});
+
+test('create character with short name', () => {
   expect(() => {
-    const character = new Bowman('a');
-    character.levelUp();
-  }).toThrow();
+    new Bowman('a').toThrow();
+  });
 });
 
 test('create character with long name', () => {
   expect(() => {
-    const character = new Bowman('abcdefghijklm');
-    character.levelUp();
-  }).toThrow();
+    new Bowman('abcdefghijklm').toThrow();
+  });
 });
 
 test('create character with wrong type', () => {
   expect(() => {
-    const character = new Bowman('bow1', 'incorrectType');
-    character.levelUp();
-  }).toThrow();
+    new Bowman('bow1', 'incorrectType').toThrow();
+  });
 });
 
 test('LevelUp check', () => {
